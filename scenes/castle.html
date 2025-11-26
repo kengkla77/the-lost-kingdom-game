@@ -1,0 +1,28 @@
+<div class="absolute inset-0 z-0">
+    <img src="https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=1920&q=80"
+        class="w-full h-full object-cover brightness-50">
+</div>
+
+<div
+    class="absolute bottom-0 left-0 w-full p-6 md:p-10 z-10 bg-gradient-to-t from-black via-black/90 to-transparent pt-32">
+    <h2 class="text-2xl md:text-4xl text-purple-400 mb-3 md:mb-4 drop-shadow-md">
+        🏰 The Fallen Fortress
+    </h2>
+    <p class="text-sm md:text-lg text-gray-200 leading-relaxed mb-6 md:mb-8 max-w-4xl">
+        กำแพงหินเย็นเฉียบ เต็มไปด้วยร่องรอยของการต่อสู้เมื่อนานมาแล้ว กลิ่นสนิมและเถ้าถ่านยังคงอบอวล
+        เจ้าเห็นแสงไฟวูบวาบมาจากยอดหอคอย... มีใครบางคนอยู่ที่นั่น
+    </p>
+
+    <div class="flex flex-col md:flex-row gap-3 md:gap-4 w-full md:w-auto">
+        <button
+            class="w-full md:w-auto px-6 py-3 bg-purple-900/80 text-white rounded border border-purple-500 active:scale-95"
+            hx-get="scenes/start.html" hx-target="#game-stage">
+            ↩ หนีกลับไปตั้งหลัก
+        </button>
+        <button
+            class="w-full md:w-auto px-6 py-3 bg-red-900/80 text-white rounded border border-red-500 animate-pulse active:scale-95"
+            hx-get="scenes/tower.html" hx-target="#game-stage">
+            ⚔ ชักดาบแล้วเดินขึ้นหอคอย
+        </button>
+    </div>
+</div>
