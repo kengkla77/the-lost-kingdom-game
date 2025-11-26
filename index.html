@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>The Lost Kingdom</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.6"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital@0;1&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS Reset สำหรับมือถือ */
+        html, body {
+            width: 100%; height: 100%; margin: 0; padding: 0;
+            overflow: hidden; /* ซ่อน Scrollbar */
+            background: black;
+            font-family: 'Lora', serif;
+        }
+        h1, h2, h3, button { font-family: 'Cinzel', serif; }
+        
+        /* View Transition Animation */
+        ::view-transition-group(root) { animation-duration: 0.8s; }
+    </style>
+</head>
+<body>
+    <main id="game-stage" class="w-full h-full relative"
+          hx-get="scenes/start.html" 
+          hx-trigger="load" 
+          hx-swap="innerHTML">
+    </main>
+
+    <script>
+        document.addEventListener('htmx:beforeSwap', event => {
+            if (!document.startViewTransition) return;
+            event.preventDefault();
+            const target = event.detail.target;
+            const content = event.detail.serverResponse;
+            document.startViewTransition(() => {
+                target.innerHTML = content;
+                htmx.process(target);
+            });
+        });
+    </script>
+</body>
+</html>
