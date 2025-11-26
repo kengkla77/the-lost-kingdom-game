@@ -44,7 +44,7 @@ my-visual-novel/
 
 Clone Repo:
 ```
-git clone [https://github.com/your-username/the-lost-kingdom.git](https://github.com/your-username/the-lost-kingdom.git)
+git clone (https://github.com/kengkla77/the-lost-kingdom-game.git)
 ```
 ## เปิดด้วย Live Server (แนะนำ):
 * ติดตั้ง Extension "Live Server" ใน VS Code
